@@ -1,0 +1,219 @@
+/*
+	Author: Thomas Bethmont
+	Author URI: web.thomasbethmont.fr
+*/
+
+/* html5doctor.com Reset v1.6.1 - http://cssreset.com */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}nav ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{background-color:#ff9;color:#000;text-decoration:none}mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}input,select{vertical-align:middle}
+
+/* Utilities */
+.cf:before,.cf:after{content:" ";display:table}.cf:after{clear:both}.cf{*zoom:1}.left{float:left}.right{float:right}
+
+* { 
+  -webkit-tap-highlight-color: transparent;
+  -moz-box-sizing:border-box; 
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box; 
+}
+
+::-moz-selection { 
+  color: #FFFFFF; 
+  color: rgba(255, 255, 255, 1); 
+  background: #000000;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+::selection { 
+  color: #FFFFFF; 
+  color: rgba(255, 255, 255, 1); 
+  background: #000000;
+  background-color: rgba(0, 0, 0, 1);
+
+} 
+
+/* hide the dotted lines around an element when it receives focus */
+a{ _noFocusLine: expression(this.hideFocus=true); } /* ie7 */
+a::-moz-focus-inner {border:0;} /* firefox */
+a:focus {outline:none;} /* ie8, chrome, etc */
+
+/* Remove the gap between images and the bottom of their containers: h5bp.com/i/440*/
+img {
+  vertical-align: middle;
+  max-width: 100%; 
+  height: auto; 
+  width: auto;
+}
+
+/****************
+		Layout
+/**************/
+
+html {
+    font-size: 62.5%;
+    -webkit-font-smoothing: antialiased;
+    overflow-y:scroll;
+    height: 100%;
+}
+
+body {
+	height: 100%;
+    font-style: normal;
+    line-height: 1.2;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+    font-size: 14px; 
+    font-size: 1.4rem; 
+    background-color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+#main{
+	 overflow: hidden;
+	 position: relative;
+	 height: 100%;
+	 width: 100%;
+}
+
+
+
+/************************************************************
+		Game
+/*********************************************************************/
+
+
+/*-----------------
+	Décorations
+----------------*/
+
+#background-scroll{
+	width: 100%; 
+	height: 100%;
+}
+
+#menu{
+    background-color:#fff;
+    background-color: rgba(255,255,255, 0.3);
+    color: #00FF30;
+    font-family: monospace;
+    padding: 4px;
+    position: fixed;
+   	top : 0;
+   	right: 0;
+   	width: 100%;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+#menu > div{
+	display: inline-block;
+}
+	.weapon-choice{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+		.weapon-selector{
+			display: inline-block;
+			padding: 0 10px;
+			background-color: rgb(66, 184, 221);
+			text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+			margin: 5px 0px;
+			color: #fff;
+			border-radius: 4px;
+			text-align: center;
+			cursor: pointer
+		}
+
+		.weapon-active{
+			background-color: rgb(86, 194, 225);
+		}
+
+	#infos{
+		
+	}
+
+		#life{
+			color: #15ffb4;
+			background-color: rgb(66, 184, 221);
+			line-height: 30px;
+			min-width: 30px;
+			text-align: center;
+			padding: 0 5px;
+			-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+			-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+			box-sizing: border-box;  
+		}
+
+
+/*-------------------------
+	interactive elements
+------------------------*/
+
+#spaceship{
+	position:absolute;
+	top:300px;
+	left:10px;
+	height: 106px;
+	width: 169px;
+ 	background: center center url(../img/spaceship.gif) no-repeat;	
+	z-index: 99999;
+	transform: translate3d(0,0,0);
+	transform-origin:  120px 50% ;
+	/*border: 1px solid white;*/
+}
+
+.enemy{
+	/*width:100px;*/
+	height:30px;
+	position:absolute;
+	display:inline-block;
+	/*background:center center url(../img/comete2.png) no-repeat;*/
+	z-index: 9997;
+	transform: translate3d(0,0,0);
+}
+
+.explode{
+ 	/*background: center center url(../img/explosion.gif) no-repeat;*/
+ 	margin-top: -10px;
+ 	width:100px;
+	height:100px;
+	position:absolute;
+	display:inline-block;
+	z-index: 9997;
+	transform: translate3d(0,0,0);	
+	-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  	background-size: cover; /* version standardisée */
+}
+
+.proj{
+	width:10px;
+	height:10px;
+	position:absolute;
+	background:red;
+	display:inline-block;
+	z-index: 9998;
+	transform: translate3d(0,0,0);
+}
+
+	.basic{
+		background:red;
+		border-radius: 25px;
+		/*background:center center url(../img/tir.png) no-repeat;*/
+	}
+
+	.double{
+		background:green;
+		/*background:center center url(../img/double.png) no-repeat;*/
+	}
+
+	.bombe{
+		background:yellow;
+		border-radius: 100px;
+		/*background:center center url(../img/bombe.png) no-repeat;*/
+	}
+
+
+
